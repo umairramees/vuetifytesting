@@ -1,6 +1,6 @@
 <template>
     <v-card class="borderbox">
-        <input type="checkbox" :data-src="value" @click="changeImage"/>
+        <input type="radio" name="imageselector" :data-src="value" @click="changeImage" />
     </v-card>
 </template>
 <script lang="ts">
@@ -16,11 +16,7 @@ export default {
     setup(){
         const store = useStore();
         const changeImage = (e) => {
-            if(e.target.checked){
-                store.commit('setSrc', e.target.getAttribute('data-src'))
-            }else{                
-                store.commit('setSrc', 'A03359C5-9C11-489B-B50E-19C8F0AD8950.jpg')
-            }
+            store.commit('setSrc', e.target.getAttribute('data-src'))
         }
         return {
             changeImage
@@ -45,7 +41,7 @@ export default {
     line-height: 40px !important;
     font-size: 10px !important;
 }
-input[type=checkbox] {
+input[type=radio] {
     vertical-align: middle;
     position: absolute;
     right: 10px;
