@@ -1,6 +1,6 @@
 <template>
     <v-card class="borderbox">
-        <input type="radio" name="imageselector" :data-src="value" @click="changeImage" />
+        <input type="radio" name="imageselector" :data-src="value" @click="changeImage" :checked="index===0" />
     </v-card>
 </template>
 <script lang="ts">
@@ -8,7 +8,8 @@ import { reactive, computed } from 'vue';
 import { useStore } from 'vuex';
 export default {
     props:[
-        'value'
+        'value',
+        'index'
     ],
     data: () => {
         
