@@ -12,7 +12,7 @@ export default {
         'index'
     ],
     data: () => {
-        
+        return {}
     },
     setup(){
         const store = useStore();

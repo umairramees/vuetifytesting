@@ -8,11 +8,15 @@ export default createStore({
     width: 2000,
     height: 768,
     percent: 100,
-    src: 'A03359C5-9C11-489B-B50E-19C8F0AD8950.jpg'
+    src: 'CEEA3A26-BE39-4E33-ADFE-091167F8E12F.jpg',
+    zoom: 3
   },
   getters: {
     ratio: state => {
       return state.ratio
+    },
+    zoom: state => {
+      return state.zoom
     },
     src: state => {
       return state.src
@@ -41,11 +45,13 @@ export default createStore({
       state.src = src
     },
     zoomoutPercent (state) {
+      state.zoom += 1;
       state.percent += 25;
       state.width = state.originw * state.percent / 100;
       state.height = state.originy * state.percent / 100;
     },
     zoominPercent (state) {
+      state.zoom -= 1;
       state.percent -= 25;
       state.width = state.originw * state.percent / 100;
       state.height = state.originy * state.percent / 100;
@@ -53,7 +59,6 @@ export default createStore({
   },
   actions: {
     setWidth ({ commit }) {
-      console.log('ok')
       commit('setWidth', 100)
     },
     getPercent ({ commit }) {
