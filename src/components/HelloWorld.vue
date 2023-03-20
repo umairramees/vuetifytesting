@@ -83,7 +83,7 @@ export default {
         { title: "Atlas", value: "F0A6F649-15B8-4B8F-89A1-8F5AE5831FE2.jpg" },
         { title: "Gadenia", value: "bedroom 2.jpeg" },
       ],
-      rail: false,
+      rail: true,
       zoomed: false,
       imageAspectRatio: 1,
     };
@@ -128,7 +128,6 @@ button {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: yellow !important;
   font-size: 22px !important;
   margin: 3px;
 }
@@ -137,6 +136,6 @@ button:hover {
   color: white;
 }
 .navbar {
-  width: 380px !important;
+  width: 380px;
 }
 </style>

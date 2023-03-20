@@ -2,7 +2,7 @@
     <div>
       <VueZoomer
         ref="zoomer"
-        style="width: calc(100vw - 380px); height: 100vh; border: solid 1px silver"
+        style="width: 100vw; height: 100vh; border: solid 1px silver"
         :aspect-ratio="imageAspectRatio"
         :max-scale="10"
         :zooming-elastic="false"
@@ -10,7 +10,7 @@
       >
         <img
           :src="'/src/assets/images/'+src"
-          style="object-fit: contain; width: calc(100vw - 380px); height: 100%"
+          style="object-fit: contain; width: 100vw; height: 100%"
           @load="onImageLoad"
         />
       </VueZoomer>
